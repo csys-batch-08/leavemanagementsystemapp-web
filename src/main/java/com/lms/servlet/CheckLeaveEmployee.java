@@ -1,4 +1,4 @@
-package in.fwsa.todoapp.servlet;
+package com.lms.servlet;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,17 +7,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.lms.daoimpl.EmpDaoImpl;
+import com.lms.daoimpl.ShowLevDaoImpl;
+import com.lms.model.EmpLogin;
+import com.lms.model.ShowLevBal;
+
 /**
- * Servlet implementation class HelloServlet
+ * Servlet implementation class CheckLeaveEmployee
  */
-@WebServlet("/HelloServlet")
-public class HelloServlet extends HttpServlet {
+@WebServlet("/checklevbal")
+public class CheckLeaveEmployee extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public HelloServlet() {
+    public CheckLeaveEmployee() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,17 +31,21 @@ public class HelloServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("HelloServlet123 - GET Request");
-		response.getWriter().append("HelloServlet - GET Request");
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		int employeeid=Integer.parseInt(request.getParameter("cid"));
+		ShowLevBal sh=new ShowLevBal(employeeid);
+		ShowLevDaoImpl cklev=new ShowLevDaoImpl() ;
+		cklev.checkbalance(sh);
+		response.sendRedirect("CheckLeaveEmployee.jsp");
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		System.out.println("HelloServlet - POST Request");
-		response.getWriter().append("HelloServlet - POST Request");
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }
