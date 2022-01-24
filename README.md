@@ -1,20 +1,30 @@
 objective
+
 Leave Management System
 
 Features
+
 View all employees
+
 employee login
+
 admin login
+
 employee apply leave
+
 employee cancel leave
+
 show all leave request
+
 show leave balance
+
 admin approve leave
+
 admin cancel leave
+
 admin update employee
 
 Admin
-
 
 1.show all employee
 
@@ -30,7 +40,6 @@ Admin
 
 
 User
-
 
 1.employee apply leave
 
