@@ -55,15 +55,11 @@ List<EmpLogin> log=employ.showEmployee();
   
 %>
 <br>
-<!-- <div class="btn">
-    <a href="AdminAddEmployee.jsp"><button type="button" class="btn btn-primary"> Add Employee</button></a>
-    </div> -->
+
    <div class="btn1">
-    <a href="AdminUpdateEmployee.jsp"><button type="button" class="btn btn-primary">Update Employee</button></a>
+    <a href="adminUpdateEmployee.jsp"><button type="button" class="btn btn-primary">Update Employee</button></a>
 </div>
-   <!-- <div class="btn2">
-    <a href="AdminDeleteEmployee.jsp"><button type="button" class="btn btn-primary"> Delete Employee</button></a>
-    </div> -->
+  
 <div class="container">
 <table class="table table-bordered">
 
@@ -105,10 +101,7 @@ for(EmpLogin em:log){
        </div>
        
 </form>
-<!-- <a href="AdminAddEmployee.jsp"><button type ="sumbit">Add New Employee</button></a>
-<a href="AdminUpdateEmployee.jsp"><button type ="sumbit">Update New Employee</button></a>
-<a href="AdminDeleteEmployee.jsp"><button type ="sumbit">Delete New Employee</button></a>
- -->
+
 
 </body>
 </html>

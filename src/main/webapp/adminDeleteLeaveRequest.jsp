@@ -24,13 +24,6 @@ margin-left:50px;}
 </style>
 </head>
 <body>
-<!-- <h3>Leave Request Form</h3>
-<form action="dellev" method="get">
-<label>Enter the request id:</label>
-<input type="text" name="resqsid"><br>
-<br>
-<button type="submit">submit</button>
-<button type="reset">reset</button> -->
 
 
 <div class="h2">

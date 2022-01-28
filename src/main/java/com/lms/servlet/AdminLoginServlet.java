@@ -14,7 +14,7 @@ import com.lms.daoimpl.AdminDaoImpl;
 import com.lms.model.Admin;
 
 
-@WebServlet("/AdminLogin")
+@WebServlet("/AdminLogin1")
 public class AdminLoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -29,8 +29,8 @@ public class AdminLoginServlet extends HttpServlet {
 		ResultSet rs= adi.validateAdminlogin(ad);
 		try {
 			if(rs.next()) {
-				if(rs.getInt(1) == id && rs.getString(4).equals(password)) {
-					response.sendRedirect("RequestForm.jsp");
+				if(rs.getInt(1) == id && rs.getString(2).equals(password)) {
+					response.sendRedirect("requestForm.jsp");
 				}
 			}else {
 				response.getWriter().println("invalid username or password");
@@ -40,18 +40,7 @@ public class AdminLoginServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-//		try {
-//			if(rs.next()) {
-//				response.sendRedirect("RequestForm.jsp");
-//			}
-//			else {
-//				response.sendRedirect("AdminLogin.jsp");
-//			}
-//		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			//e.printStackTrace();
-		//}
-		//response.sendRedirect("RequestForm.jsp");
+
 		
 	}
 

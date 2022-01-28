@@ -64,7 +64,7 @@ p {
 <div style="text-align: center;">
 <h3> ADMIN LOGIN </h3>
 
-<form action="AdminLogin" method="get">
+<form action="AdminLogin1" method="get">
 
 
   <div class="container">

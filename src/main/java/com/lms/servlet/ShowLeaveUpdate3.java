@@ -35,7 +35,7 @@ public class ShowLeaveUpdate3 extends HttpServlet {
 		EmpLogin el=new EmpLogin(empid);
 		EmpDaoImpl edi=new EmpDaoImpl();
 		edi.addleave(el);
-		response.sendRedirect("ShowLeaveBalanceEmployee.jsp");
+		response.sendRedirect("showLeaveBalanceEmployee.jsp");
 	}
 
 	/**

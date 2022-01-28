@@ -36,7 +36,7 @@ public class AdminUpdateLeaveRequest extends HttpServlet {
 		 LevStatus st=new  LevStatus(status, resid);
 		 LeaveResDaoImpl levre=new LeaveResDaoImpl ();
 		 levre.updatestatus(status, resid);
-		  response.sendRedirect("ShowLeaveRes.jsp");
+		  response.sendRedirect("showLeaveRes.jsp");
 	}
 
 	/**

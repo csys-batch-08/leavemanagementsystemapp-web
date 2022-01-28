@@ -37,7 +37,7 @@ public class CheckLeaveEmployee extends HttpServlet {
 		ShowLevBal sh=new ShowLevBal(employeeid);
 		ShowLevDaoImpl cklev=new ShowLevDaoImpl() ;
 		cklev.checkbalance(sh);
-		response.sendRedirect("CheckLeaveEmployee.jsp");
+		response.sendRedirect("checkLeaveEmployee.jsp");
 	}
 
 	/**

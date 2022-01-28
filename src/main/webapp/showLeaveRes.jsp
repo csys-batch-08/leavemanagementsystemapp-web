@@ -49,12 +49,12 @@ List<LeaveRes> showLevres=levres.showLevres();
 %>
 <br>
  <div class="btn">
- <form action="AdminUpdateLeaveRequest.jsp">
+ <form action="adminUpdateLeaveRequest.jsp">
  <button type = "submit" >Update Leave Request</button>
  </form>
 </div>
 <div class="btn1">
-<a href="AdminDeleteLeaveRequest.jsp"><button type = "submit"  >Delete Leave Request</button></a>
+<a href="adminDeleteLeaveRequest.jsp"><button type = "submit"  >Delete Leave Request</button></a>
 </div>
 <div class="container">
 <table class="table table-bordered">

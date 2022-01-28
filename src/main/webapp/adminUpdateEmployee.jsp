@@ -27,16 +27,7 @@ margin-left:80px;}
 </style>
 </head>
 <body>
-<!-- <h2>Update Employee</h2>
-<form action="updateemp" method="get">
-Enter Employee id:<input type="number" name="empupid"><br>
-<br>
-Department:<input type="text" name ="depart"><br>
-<br>
 
-<button type="submit">submit</button>
-<button>reset</button>
-</form> -->
 <div class="h2">
  <h2>Leave Request Form :</h2>
  </div>

@@ -46,7 +46,7 @@ public class AdminDaoImpl implements AdminDao {
 
 	public ResultSet validateAdminlogin(Admin user) {
 		Admin admin=null;
-		String insertQuery1 = "select * from LMS_admin where manager_id=? and manager_password=?";
+		String insertQuery1 = "select manager_id,manager_password from LMS_admin where manager_id=? and manager_password=?";
 		ResultSet rs=null;
 		Connection con;
 		try {
@@ -153,7 +153,7 @@ System.out.println(user.getManager_id() + user.getManager_password());
 	public List<EmpLogin> showEmployee() {
 		List<EmpLogin> emplogin = new ArrayList<EmpLogin>();
 		EmpLogin emplog = null;
-		String empshow = "select*from LMS_EMPLOYEE";
+		String empshow = "select emp_id,emp_name,emp_department,emp_email,emp_password,users_type from LMS_EMPLOYEE";
 		Connection con;
 		try {
 			con = ConnectionUtil.getConnection();

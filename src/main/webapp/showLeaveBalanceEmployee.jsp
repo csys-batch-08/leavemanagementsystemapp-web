@@ -88,10 +88,10 @@ for(ShowLevBal sh:showbal){
       </table></center><br><br><br><br><br><br>
       </div>
       <div class="but">
-<a href="ShowLeaveUpdate.jsp"><button type="button" class="btn btn-primary"> Casual Leave </button></a>
-<a href="ShowLeaveUpdate1.jsp"><button type="button" class="btn btn-primary"> Medical Leave </button></a>
-<a href="ShowLeaveUpdate2.jsp"><button type="button" class="btn btn-primary"> Paid Leave </button></a>
-<a href="ShowLeaveUpdate3.jsp"><button type="button" class="btn btn-primary">Add Id </button></a>
+<a href="showLeaveUpdate.jsp"><button type="button" class="btn btn-primary"> Casual Leave </button></a>
+<a href="showLeaveUpdate1.jsp"><button type="button" class="btn btn-primary"> Medical Leave </button></a>
+<a href="showLeaveUpdate2.jsp"><button type="button" class="btn btn-primary"> Paid Leave </button></a>
+<a href="showLeaveUpdate3.jsp"><button type="button" class="btn btn-primary">Add Id </button></a>
      </div>
 </form>      
 

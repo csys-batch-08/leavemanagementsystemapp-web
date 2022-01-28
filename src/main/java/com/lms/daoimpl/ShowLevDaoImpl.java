@@ -124,7 +124,7 @@ public class ShowLevDaoImpl implements ShowLevDao {
 		List<ShowLevBal> showlev=new ArrayList<ShowLevBal>();
 		ShowLevBal showlevba=null;
 
-		String query1 = "select * from LEAVE_BAL ";
+		String query1 = "select emp_id,causal_lev,medical_lev,causal_lev_bal,medi_lev_bal,paid_lev from LEAVE_BAL ";
 		Connection con;
 		try {
 			con = ConnectionUtil.getConnection();

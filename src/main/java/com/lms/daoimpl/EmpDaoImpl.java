@@ -44,7 +44,7 @@ public class EmpDaoImpl implements EmpDao {
 	public ResultSet validateLogin(EmpLogin user) {
 		
         ResultSet rs=null;
-        String insertQuery2 = "select * from LMS_EMPLOYEE where emp_name=? and emp_password=?";
+        String insertQuery2 = "select emp_id, emp_name,emp_department,emp_email,emp_password from LMS_EMPLOYEE where  emp_name=? and emp_password=?";
 		
 		Connection con;
 		try {
@@ -52,7 +52,7 @@ public class EmpDaoImpl implements EmpDao {
 			PreparedStatement pstmt = con.prepareStatement(insertQuery2);
 			
 			
-
+            
 			pstmt.setString(1, user.getEmp_name());
 			pstmt.setString(2, user.getEmp_password());
 

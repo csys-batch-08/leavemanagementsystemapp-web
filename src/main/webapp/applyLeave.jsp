@@ -115,21 +115,17 @@ color:white
 </head>
 <body>
 <h1>LEAVE MANAGEMENT SYSTEM </h1>
-<!-- <ul>
-<a href="ShowLeaveBalanceEmployee.jsp"><li>Show Leave Balance</li></a>
-<a href="InsertLeaveRequest.jsp"><li> Leave Request Insert</li></a>
-<a href="UpdateLeaveRequest.jsp"><li> Leave Request Update</li></a>
-</ul> -->
+
 <ul>
   
   
 <li><a href="index.jsp">Logout</a></li>
   
-  <li><a href="ShowLeaveBalanceEmployee.jsp">Balance leave</a></li>
-    <li><a href="UpdateLeaveRequest.jsp">Update leave</a></li>
+  <li><a href="showLeaveBalanceEmployee.jsp">Balance leave</a></li>
+    <li><a href="updateLeaveRequest.jsp">Update leave</a></li>
     
     <div class="one">
-      <li><a href="InsertLeaveRequest.jsp">Leave form</a></li>
+      <li><a href="insertLeaveRequest.jsp">Leave form</a></li>
       </div>
 </ul>
  <div class="container">

@@ -63,7 +63,7 @@ public class InsertLeaveRequest extends HttpServlet {
 		LeaveResDaoImpl levda=new LeaveResDaoImpl ();
 		levda.applyLeave(lev);
 		
-		response.sendRedirect("ApplyLeave.jsp");
+		response.sendRedirect("applyLeave.jsp");
 		
 		
 	}

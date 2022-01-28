@@ -23,7 +23,7 @@ public class AdminDeleteLeaveRequest extends HttpServlet {
 		 LevStatus std=new  LevStatus(residel);
 		 LeaveResDaoImpl levresd=new LeaveResDaoImpl ();
 		 levresd.deletestatus(residel);
-		  response.sendRedirect("ShowLeaveRes.jsp");
+		  response.sendRedirect("showLeaveRes.jsp");
 	}
 
 	

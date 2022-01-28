@@ -8,13 +8,13 @@
 
 <style>
 body {
+	
 	background-color: #b0dab9;
 }
 
 .container {
-	max-width: 280px;
+	max-width: 300px;
 	width: 100%;
-	height: 290px;
 	background-color: rgb(255, 255, 255);
 	/* background-color:rgba(253, 253, 253, 0.973); */
 	padding: 25px 30px;
@@ -26,11 +26,11 @@ body {
 
 form .input-box span.details {
 	display: block;
-	margin-bottom: 18px;
+	margin-bottom: 15px;
 }
 
 .user-details .input-box input {
-	height: 35px;
+	height: 30px;
 	width: 80%;
 	outline: none;
 	font-size: 16px;
@@ -43,12 +43,12 @@ form .input-box span.details {
 
 form .button {
 	height: 45px;
-	margin: 3px 0;
+	margin: 35px 0;
 }
 
 form .button input {
 	height: 80%;
-	width: 40%;
+	width: 10%;
 	border-radius: 15px;
 	border: none;
 	color: #fff;
@@ -59,15 +59,14 @@ form .button input {
 	transition: all 0.3s ease;
 	background: #04AA6D;
 	position: relative;
-	left: -3px;
-	top: 85px;
+	left: 510px;
+	top: 400px;
 }
 
 form .button input:hover {
 	transform: scale(0.99);
 	background: rgb(241, 175, 7);
 }
-
 form .button1 {
 	height: 45px;
 	margin: 3px 0;
@@ -75,7 +74,7 @@ form .button1 {
 
 form .button1 input {
 	height: 80%;
-	width: 40%;
+	width: 10%;
 	border-radius: 15px;
 	border: none;
 	color: #fff;
@@ -86,14 +85,15 @@ form .button1 input {
 	transition: all 0.3s ease;
 	background: #04AA6D;
 	position: relative;
-	left: 175px;
-	top: 35px;
+	left: 700px;
+	top: 320px;
 }
 
 form .button1 input:hover {
-	transform: scale(0.99);
+	transform:scale(0.99);
 	background: rgb(241, 175, 7);
 }
+
 
 form .user-details .input-box {
 	margin-bottom: 15px;
@@ -103,53 +103,57 @@ form .user-details .input-box {
 </style>
 </head>
 <body>
-	<%
-	int empid = (int) session.getAttribute("empid");
-	%>
-	<p>
+	<%int empid=(int)session.getAttribute("empid"); %>
 	<center>
-		<h3>LEAVE UPDATE FORM</h3>
+		<h3>LEAVE REQUEST FORM</h3>
 	</center>
-	</p>
-	<form action="update" method="get" onmouseover="calc()">
+	<form action="insert" method="get" onmouseover="calc()">
 		<input style="visibility: hidden;" type="number" name="id"
 			value="<%=empid%>"><br> <br>
 		<div class="container">
-			<div class="user-details">
-				<div class="input-box">
-					<span class="details">Enter the from date:</span> <input
-						type="date" name="upfromdate" id="datefield" required>
-				</div>
+			<div class="content">
+				<div class="user-details">
+					<div class="input-box">
+						<span class="details">Enter the reason:</span> <input type="text"
+							name="reason" placeholder="Enter your reason"required>
+					</div>
 
 
-				<div class="input-box">
-					<span class="details">Enter the to date:</span> <input type="date"
-						name="todate" id="uptodate" required>
-				</div>
+					<div class="input-box">
+						<span class="details">Enter the from date:</span> <input
+							type="date" name="fromdate" id="datefield" required>
+					</div>
 
-				<div class="input-box">
-					<span class="details">Enter the no of days:</span> <input
-						type="number" name="nofdays" id ="no" placeholder="No of days"required>
-				</div>
-				<div class="button">
-					<input type="submit" value="submit">
-				</div>
-				<div class="button1">
-					<input type="reset" value="reset">
+
+					<div class="input-box">
+						<span class="details">Enter the to date:</span> <input type="date"
+							name="todate" id="todate" required>
+					</div>
+
+					<div class="input-box">
+						<span class="details">Enter the no of days:</span> <input
+							type="number" name="days" id="no" placeholder="No of days" required>
+					</div>
 				</div>
 			</div>
 		</div>
 
+
+
+
+
+
+
+		<div class="button">
+			<input type="submit" value="submit">
+		</div>
+		<div class="button1">
+					<input type="reset" value="reset">
+				</div>
+
 	</form>
-<!-- Enter the from date:<input type="date" name="upfromdate"><br>
-<br>
-Enter the to date:<input type="date" name="uptodate"><br>
-<br>
-Enter the noofdays:<input type="number" name="nofdays"><br>
-<br>
-<button type="submit">submit</button>
-<button>reset</button>
-</form> -->
+
+</body>
 <script type="text/javascript">
 var today = new Date();
 var dd = today.getDate();
@@ -166,7 +170,6 @@ document.getElementById("datefield").setAttribute("min", today);
 </script>
 
 
-
 <script>
 today();
 function today(){
@@ -177,7 +180,7 @@ function today(){
     var yyyy1= today.getFullYear()+1;
 maxdate =yyyy1 + '-' + mm + '-'+ dd  ;
 
-document.getElementById("uptodate").setAttribute("max",maxdate);
+document.getElementById("todate").setAttribute("max",maxdate);
 
 }
 </script>
@@ -190,7 +193,7 @@ document.getElementById("uptodate").setAttribute("max",maxdate);
   
     function calc(){
     var fromdate=document.getElementById("datefield").value;
-    var todate=document.getElementById("uptodate").value;
+    var todate=document.getElementById("todate").value;
     var days=document.getElementById("no");
     console.log(fromdate);
     var date1 = new Date(fromdate);
@@ -205,8 +208,6 @@ const utc2 = Date.UTC(date2.getFullYear(), date2.getMonth(), date2.getDate());
 days.value=Math.floor((utc2 - utc1) / _MS_PER_DAY);
     }  
 </script>
-
-
 
 
 

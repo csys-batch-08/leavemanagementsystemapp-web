@@ -52,7 +52,7 @@ public class UpdateLeaveRequest extends HttpServlet {
 		System.out.println(levup);
 		System.out.println();
 		levupdao.updatelev(levup);
-		response.sendRedirect("ApplyLeave.jsp");
+		response.sendRedirect("applyLeave.jsp");
 	}
 
 	/**

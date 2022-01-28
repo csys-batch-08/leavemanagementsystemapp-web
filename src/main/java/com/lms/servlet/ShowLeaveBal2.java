@@ -36,7 +36,7 @@ public class ShowLeaveBal2 extends HttpServlet {
 		ShowLevBal sbal2=new ShowLevBal(empid, 0, 0, paid);
 		ShowLevDaoImpl sdao2=new ShowLevDaoImpl();
 		sdao2.updatebal2(sbal2);
-		response.sendRedirect("ShowLeaveBalanceEmployee.jsp");
+		response.sendRedirect("showLeaveBalanceEmployee.jsp");
 	}
 
 	/**

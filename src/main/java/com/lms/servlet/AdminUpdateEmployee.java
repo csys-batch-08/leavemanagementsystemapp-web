@@ -38,7 +38,7 @@ public class AdminUpdateEmployee extends HttpServlet {
 		EmpLogin empupin=new EmpLogin( dept,empupdateid);
 		AdminDaoImpl amupdao=new AdminDaoImpl();
 		amupdao.updateuser(empupin);
-		 response.sendRedirect("ShowAllEmployee.jsp");
+		 response.sendRedirect("showAllEmployee.jsp");
 		
 	}
 

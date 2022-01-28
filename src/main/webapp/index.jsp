@@ -110,28 +110,18 @@ ul {
 </head>
 <body>
 	<h1>LEAVE MANAGEMENT SYSTEM</h1>
-	<!-- <ul>
-<li><a href="AdminLogin.jsp">Admin login</a></li>
-<li><a href="Register.jsp">Employee register</a></li>
-<li><a href="EmployeeLogin.jsp">Employee login</a></li>
-</ul> -->
 
-	<!-- <a href="AdminLogin.jsp"><li>admin login</li></a>
-<a href="Register.jsp"><li>employee register</li></a>
-<a href="EmployeeLogin.jsp"><li>employee login</li></a>		
-</ul>
- -->
-	<form action="Register.jsp">
+	<form action="register.jsp">
 		<div class="button1">
 			<input type="submit" value="Register login">
 		</div>
 		</form>
-		<form action="AdminLogin.jsp">
+		<form action="adminLogin.jsp">
 			<div class="button2">
 				<input type="submit" value="Admin login">
 			</div>
 			</form>
-			<form action="EmployeeLogin.jsp">
+			<form action="employeeLogin.jsp">
 				<div class="button3">
 					<input type="submit" value="Employee login">
 				</div>

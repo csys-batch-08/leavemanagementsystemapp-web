@@ -27,14 +27,7 @@ margin-left:50px;}
 </style>
 </head>
 <body>
-<!-- <h3>Leave Request Form</h3>
-<form action="adulev" method="get">
-Enter the status:<input type="text" name="status"><br>
-<br>
-Enter the request id:<input type="number" name="resid"><br>
-<br>
-<button type="submit">submit</button>
-<button type="reset">reset</button> -->
+
 <div class="h2">
  <h2>Leave Request Form</h2>
  </div>

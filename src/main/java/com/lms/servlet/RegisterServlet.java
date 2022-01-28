@@ -40,7 +40,7 @@ public class RegisterServlet extends HttpServlet {
 		 EmpLogin el=new EmpLogin(name,department,email,password);
 		 EmpDaoImpl edl=new EmpDaoImpl();
 		 edl.resister(el);
-		 response.sendRedirect("EmployeeLogin.jsp");
+		 response.sendRedirect("employeeLogin.jsp");
 		 
 	}
 

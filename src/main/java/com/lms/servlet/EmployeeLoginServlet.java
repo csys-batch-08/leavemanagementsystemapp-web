@@ -41,7 +41,7 @@ public class EmployeeLoginServlet extends HttpServlet {
 		EmpLogin emplog=new EmpLogin(name,password);
 		EmpDaoImpl empdao=new EmpDaoImpl();
 		ResultSet rs =empdao.validateLogin(emplog);
-		System.out.println("hlo");
+	
 		try {
 			rs.next();
 		} catch (SQLException e1) {
@@ -56,8 +56,8 @@ public class EmployeeLoginServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}try {
-			if(rs.getString(2).equals(name)&&(rs.getString(5).equals(password))) {
-				response.sendRedirect("ApplyLeave.jsp");
+			if(rs.getString(1).equals(name)&&(rs.getString(2).equals(password))) {
+				response.sendRedirect("applyLeave.jsp");
 			}else {
 				response.getWriter().println("invalid username or password");
 			}

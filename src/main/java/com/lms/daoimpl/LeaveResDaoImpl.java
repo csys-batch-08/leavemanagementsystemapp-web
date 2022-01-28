@@ -121,7 +121,7 @@ public class LeaveResDaoImpl implements LeaveResDao {
 	public List<LeaveRes> showLevres() {
 		List<LeaveRes> leaveRequest = new ArrayList<LeaveRes>();
 		LeaveRes leave = null;
-		String show = "select*from LEAVE_RES";
+		String show = "select request_id,emp_id,reason,from_date,to_date,no_ofdays,status from LEAVE_RES";
 		Connection con;
 		try {
 			con = ConnectionUtil.getConnection();
