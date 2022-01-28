@@ -12,8 +12,8 @@
 
 <style>
 body{
-	background:linear-gradient(#DAD299, #b0dab9);
-	
+	background: linear-gradient(#70e1f5,#ffd194);
+	background-repeat: no-repeat;
 }
 
 
@@ -28,11 +28,6 @@ ul{
 float:left;
 display:inline;
 }
-.p{
-margin-top:49px;
-margin-left:260px;}
-.text{
-margin-top:89px;}
 </style>
 </head>
 <body>
@@ -48,24 +43,13 @@ margin-top:89px;}
             <li><a href="showAllEmployee.jsp">Show All Employee</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="index.jsp"> Sign Up</a></li>
+            <li><a href="Home.jsp"> Sign Up</a></li>
             
           </ul>
         </div>
       </nav>
       <div>
-      <div class="text">
-       <p class="text-success"><h2>The Best HR software for leave management system</h2>
-       </div>
-       </p>
-       <div class="p">
-<p><h3>
-Every organization may have different needs, so while picking on a leave management<br>
- software, it will be smart to choose a leave solution that provides the basic requirements<br>
-  while offering the flexibility to customize the leave process. With HR managing <br> 
-  employee leave is effortless with an all-rounded HR management software.
-</h3></p>
-</div>
+
 
 </body>
 </html>

@@ -20,22 +20,14 @@ body{
 background:#DAD299;
 
 }
-/* .btn
-{
 
- margin-left: 350px;
-margin-top: -27px ;
-} */
 .btn1
 {
 margin-left: 840px;
 margin-top: 10px ;
 }
-/* .btn2
-{
-margin-left: 1050px;
-margin-top: -37px ; */
-}
+
+
 table{
 margin-top: 17px ;
     margin-left: 20px;
@@ -59,7 +51,7 @@ List<EmpLogin> log=employ.showEmployee();
    <div class="btn1">
     <a href="adminUpdateEmployee.jsp"><button type="button" class="btn btn-primary">Update Employee</button></a>
 </div>
-  
+   
 <div class="container">
 <table class="table table-bordered">
 
@@ -101,7 +93,10 @@ for(EmpLogin em:log){
        </div>
        
 </form>
-
+<!-- <a href="AdminAddEmployee.jsp"><button type ="sumbit">Add New Employee</button></a>
+<a href="AdminUpdateEmployee.jsp"><button type ="sumbit">Update New Employee</button></a>
+<a href="AdminDeleteEmployee.jsp"><button type ="sumbit">Delete New Employee</button></a>
+ -->
 
 </body>
 </html>

@@ -116,6 +116,7 @@ color:white
 <body>
 <h1>LEAVE MANAGEMENT SYSTEM </h1>
 
+
 <ul>
   
   
@@ -149,7 +150,7 @@ color:white
             
 
                     <div class="a">
-                        <p>Create unlimted leave types and define leave policies for 
+                        <p>Create unlimited leave types and define leave policies for 
                             <br>each type exclusively: earned leave, sick leave, casual<br>leave, maternity leave, etc.</p>
                         </div>
                         

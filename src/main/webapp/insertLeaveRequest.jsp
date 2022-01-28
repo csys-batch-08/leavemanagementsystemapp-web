@@ -144,6 +144,7 @@ form .user-details .input-box {
 
 
 
+
 		<div class="button">
 			<input type="submit" value="submit">
 		</div>

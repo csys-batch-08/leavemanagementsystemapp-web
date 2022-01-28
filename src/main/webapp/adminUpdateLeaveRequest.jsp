@@ -27,7 +27,6 @@ margin-left:50px;}
 </style>
 </head>
 <body>
-
 <div class="h2">
  <h2>Leave Request Form</h2>
  </div>
