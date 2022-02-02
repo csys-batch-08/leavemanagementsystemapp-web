@@ -122,7 +122,7 @@ color:white
   
 <li><a href="index.jsp">Logout</a></li>
   
-  <li><a href="showLeaveBalanceEmployee.jsp">Balance leave</a></li>
+  <li><a href="employee">Balance leave</a></li>
     <li><a href="updateLeaveRequest.jsp">Update leave</a></li>
     
     <div class="one">

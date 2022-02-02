@@ -52,7 +52,7 @@ public class AdminDaoImpl implements AdminDao {
 		try {
 			con = ConnectionUtil.getConnection();
 			PreparedStatement pstmt = con.prepareStatement(insertQuery1);
-System.out.println(user.getManager_id() + user.getManager_password());
+           System.out.println(user.getManager_id() + user.getManager_password());
 			pstmt.setInt(1, user.getManager_id());
 			pstmt.setString(2, user.getManager_password());
 

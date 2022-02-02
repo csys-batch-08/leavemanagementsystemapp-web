@@ -25,28 +25,25 @@ public class RegisterServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 	
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		 String name=request.getParameter("fn");
 		 String department=request.getParameter("department");
-		 System.out.println("department");
+		 System.out.println(department);
 		 String email=request.getParameter("gmail");
 		 String password=request.getParameter("password");
 		 EmpLogin el=new EmpLogin(name,department,email,password);
 		 EmpDaoImpl edl=new EmpDaoImpl();
 		 edl.resister(el);
+		 
 		 response.sendRedirect("employeeLogin.jsp");
 		 
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

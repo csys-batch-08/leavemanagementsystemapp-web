@@ -56,7 +56,7 @@ public class EmployeeLoginServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}try {
-			if(rs.getString(1).equals(name)&&(rs.getString(2).equals(password))) {
+			if(rs.getString(2).equals(name)&&(rs.getString(5).equals(password))) {
 				response.sendRedirect("applyLeave.jsp");
 			}else {
 				response.getWriter().println("invalid username or password");

@@ -1,9 +1,9 @@
 <%@page import="java.util.List"%>
-<%@page import="com.lms.model.LeaveRes"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page isELIgnored="false"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="java.sql.ResultSet"
- import ="com.lms.daoimpl.*" %>     
+     
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,13 +40,13 @@ margin-top: 10px ;
 <center><h1>LEAVE MANAGEMENT SYSTEM</h1></center>
 <p><h3> Show Leave Request Form</h3></p>
 
-<%
+<%-- <%
 LeaveResDaoImpl levres=new LeaveResDaoImpl();
 %>
 <% 
 List<LeaveRes> showLevres=levres.showLevres();
   
-%>
+%> --%>
 <br>
  <div class="btn">
  <form action="adminUpdateLeaveRequest.jsp">
@@ -69,30 +69,30 @@ List<LeaveRes> showLevres=levres.showLevres();
 
 </tr>
 
-<% 
+<%-- <% 
 
 int count=0;
 for(LeaveRes lv:showLevres){
-%>
+%> --%>
 
-
+<c:forEach items="${request}" var="leave"></c:forEach>
 
  <tbody>
              
           <tr>
-            <td><%=lv.getRequest_id()%></td>
-            <td><%=lv.getEmp_id()%></td>
-            <td><%=lv.getReason()%></td>
-            <td><%=lv.getFrom_date()%></td>
-            <td><%=lv.getTo_date()%></td>
-            <td><%=lv.getNo_ofdays()%></td>
-            <td><%=lv.getStatus()%></td>
+            <td>${leave. request_id}</td>
+            <td>${leave. emp_id}</td>
+            <td>${leave. reason}</td>
+            <td>${leave. from_date}</td>
+            <td>${leave. to_date}</td>
+            <td>${leave. no_ofdays}</td>
+            <td>${leave. status}</td>
             
            </tr>
            
      </tbody>
      
-      <%} %>
+     <%--  <%} %> --%>
        </table>
        </div>
       

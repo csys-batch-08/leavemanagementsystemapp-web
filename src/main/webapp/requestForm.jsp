@@ -12,8 +12,8 @@
 
 <style>
 body{
-	background: linear-gradient(#70e1f5,#ffd194);
-	background-repeat: no-repeat;
+	background-image:url("image/index") ;
+	
 }
 
 
@@ -28,6 +28,13 @@ ul{
 float:left;
 display:inline;
 }
+.h{
+margin-top:80px;
+margin-right:400px}
+.index{
+margin-top:40px;
+margin-left:280px;
+}
 </style>
 </head>
 <body>
@@ -38,17 +45,29 @@ display:inline;
         <div class="container-fluid">
           
           <ul class="nav navbar-nav">
-            <li class="active"><a href="showLeaveRes.jsp">Show Leave Request</a></li>
+            <li class="active"><a href="leaverequest">Show Leave Request</a></li>
             <li><a href="showLeaveBalanceAdmin.jsp">Show Leave Balance</a></li>
             <li><a href="showAllEmployee.jsp">Show All Employee</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="Home.jsp"> Sign Up</a></li>
             
-          </ul>
-        </div>
-      </nav>
-      <div>
+            </ul>
+            </div>
+            </nav>
+             </div>
+            <div class="h">
+           <h1> <em>The Best HR software for leave management system</em></h1>
+            </div>
+            <div class="index">
+           <h3> <p>Every organization may have different needs, so while picking on a leave management<br>
+             software, it will be smart to choose a leave solution that provides the basic requirements<br>
+              while offering the flexibility to customize the leave process. With greytHR managing <br>
+              employee leave is effortless with an all-rounded HR management software.</p></h3>
+            </div>
+        
+      
+     
 
 
 </body>

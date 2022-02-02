@@ -1,9 +1,10 @@
-<%@page import="com.lms.model.ShowLevBal"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page isELIgnored="false"%>
+
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
- <%@ page import="java.sql.ResultSet"
- import ="com.lms.daoimpl.*" %>       
+     
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,11 +48,11 @@ margin-top:500px;
 <h3>Show Leave Balance :</h3>
 </div>
 <form>
-<% 
+<%-- <% 
 ShowLevDaoImpl showlevbalance= new ShowLevDaoImpl();
 List<ShowLevBal> showbal=showlevbalance.showbal() ;
 int empid=(int)session.getAttribute("empid");
-%>
+%> --%>
 <br>
 <div class="table">
  <center><table border="1" cellspacing=0px; cellpadding=20px; style="width: 600px; height:5px;">
@@ -65,26 +66,27 @@ int empid=(int)session.getAttribute("empid");
             <th>Paid_Leave</th>
             
           </tr>
- <% 
+<%--  <% 
 
 int count=0;
 for(ShowLevBal sh:showbal){
 	if(sh.getEmp_id()==empid){
- %>
- <tbody>
+ %> --%>
+<c:forEach items ="${showleave}" var="leave">
+        
+        <tbody>
           <tr>
             
-            <td><%=sh.getEmp_id()%></td>
-            <td><%=sh.getCausal_lev()%></td>
-            <td><%=sh.getMedical_lev()%></td>
-            <td><%=sh.getCausal_lev_bal()%></td>
-            <td><%=sh.getMedi_lev_bal()%></td>
-            <td><%=sh.getPaid_lev()%></td>
-            
-           </tr>
-           </tbody>
-           <%} }%>
-     
+            <td>${leave. emp_id} </td>
+            <td>${leave.causal_lev}</td>
+            <td>${leave.medical_lev}</td>
+            <td>${leave.causal_lev_bal}</td>
+            <td>${leave.medi_lev_bal}</td>
+            <td>${leave.paid_lev}</td>
+</tr>
+</tbody>
+
+     </c:forEach>
       </table></center><br><br><br><br><br><br>
       </div>
       <div class="but">
