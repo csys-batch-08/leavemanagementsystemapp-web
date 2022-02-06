@@ -6,7 +6,7 @@ import com.lms.model.EmpLogin;
 
 public interface EmpDao {
 
-	public EmpLogin resister(EmpLogin log);
+	public int resister(EmpLogin log);
 
 	public ResultSet validateLogin(EmpLogin user);
 

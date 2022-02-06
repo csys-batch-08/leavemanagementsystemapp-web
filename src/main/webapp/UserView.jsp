@@ -49,7 +49,7 @@ margin-left:1200px;
 
 <!--  <center><h1 > LEAVE MANAGEMENT SYSTEM </h1></center>-->
 <div class="h3">
-<h3>Show Leave Balance :</h3>
+<h3>Employee Profile :</h3>
 </div>
 <form>
 
@@ -58,38 +58,31 @@ margin-left:1200px;
  <center><table border="1" cellspacing=0px; cellpadding=20px; style="width: 600px; height:5px;">
           <tr>
             
-            <th>Employee_Id</th>
-            <th>Casual_Leave</th>
-            <th>Medical_Leave</th>
-            <th>Casual_Leave_Balance</th>
-            <th>Medical_Leave_Balance</th>
-            <th>Paid_Leave</th>
+            <th>Employee Id</th>
+            <th>Employee Name</th>
+            <th>Employee Department</th>
+            <th>Employee Email</th>
+           
             
           </tr>
 
-<c:forEach items ="${showleave}" var="leave">
+<c:forEach items ="${userDetail}" var="user">
         
         <tbody>
           <tr>
             
-            <td>${leave.emp_id} </td>
-            <td>${leave.causal_lev}</td>
-            <td>${leave.medical_lev}</td>
-            <td>${leave.causal_lev_bal}</td>
-            <td>${leave.medi_lev_bal}</td>
-            <td>${leave.paid_lev}</td>
+            <td>${user.emp_id} </td>
+            <td>${user.emp_name}</td>
+            <td>${user.emp_department}</td>
+            <td>${user.emp_email}</td>
+            
 </tr>
 </tbody>
 
      </c:forEach>
       </table></center><br><br><br><br><br><br>
       </div>
-      <div class="but">
-<a href="showLeaveUpdate.jsp"><button type="button" class="btn btn-primary"> Casual Leave </button></a>
-<a href="showLeaveUpdate1.jsp"><button type="button" class="btn btn-primary"> Medical Leave </button></a>
-<a href="showLeaveUpdate2.jsp"><button type="button" class="btn btn-primary"> Paid Leave </button></a>
-<!-- <a href="showLeaveUpdate3.jsp"><button type="button" class="btn btn-primary">Add Id </button></a> -->
-     </div>
+
      <div class="button">
      <a href="applyLeave.jsp"><button type="button" class="btn btn-primary"> Back </button></a>
      </div>

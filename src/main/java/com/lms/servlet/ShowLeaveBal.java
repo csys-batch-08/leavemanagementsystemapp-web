@@ -1,11 +1,15 @@
 package com.lms.servlet;
 
 import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 
 import com.lms.daoimpl.ShowLevDaoImpl;
 import com.lms.model.ShowLevBal;
@@ -31,7 +35,7 @@ public class ShowLeaveBal extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
-	
+		
 		int csl=Integer.parseInt(request.getParameter("casual"));
 		int empid=Integer.parseInt(request.getParameter("id"));
 		ShowLevDaoImpl current=new ShowLevDaoImpl();
@@ -44,7 +48,11 @@ public class ShowLeaveBal extends HttpServlet {
 		ShowLevBal sbal=new ShowLevBal(csl, empid);
 		ShowLevDaoImpl sdao=new ShowLevDaoImpl();
 		sdao.updatebal(sbal);
-		response.sendRedirect("showLeaveBalanceEmployee.jsp");
+		List<ShowLevBal> showbal=sdao.checkbalance(s1) ;
+		request.setAttribute("showleave", showbal);
+		RequestDispatcher leave=request.getRequestDispatcher("showLeaveBalanceEmployee.jsp");
+		leave.forward(request, response);
+		
 		}
 		else
 		{

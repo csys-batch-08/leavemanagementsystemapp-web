@@ -1,7 +1,8 @@
-<%@page import="com.lms.daoimpl.AdminDaoImpl"%>
-<%@page import="com.lms.daoimpl.EmpDaoImpl"%>
+
 <%@page import="java.util.List"%>
-<%@page import="  com.lms.model.*"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page isELIgnored="false"%>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -33,23 +34,30 @@ margin-top: 17px ;
     margin-left: 20px;
     text-align: center;
 }
+.btn2{
+margin-left: 1250px;
+margin-top: -37px ;
+}
 
 </style>
 </head>
 <body>
 <h3>Show All Employee</h3>
 <form action="employee" method="get">
-<%
+<%-- <%
 AdminDaoImpl employ=new AdminDaoImpl ();
 %>
 <% 
 List<EmpLogin> log=employ.showEmployee();
   
-%>
+%> --%>
 <br>
 
    <div class="btn1">
     <a href="adminUpdateEmployee.jsp"><button type="button" class="btn btn-primary">Update Employee</button></a>
+</div>
+<div class="btn2">
+<a href="requestForm.jsp"><button type="button" class="btn btn-light">Back</button></a>
 </div>
    
 <div class="container">
@@ -66,29 +74,30 @@ List<EmpLogin> log=employ.showEmployee();
 
 </tr>
 
-<% 
+<%-- <% 
 
 int count=0;
 for(EmpLogin em:log){
-%>
+%> --%>
 
-
+<c:forEach items="${employee}" var="show">
 
  <tbody>
              
           <tr>
-             <td><%=em.getEmp_id()%></td>
-            <td><%=em.getEmp_name()%></td>
-            <td><%=em.getEmp_department()%></td>
-            <td><%=em.getEmp_email()%></td>
-            <td><%=em.getEmp_password()%></td>
-            <td><%=em.getUsers_type() %></td>
+             <td>${show.emp_id}</td>
+            <td>${show.emp_name}</td>
+            <td>${show.emp_department}</td>
+            <td>${show.emp_email}</td>
+            <td>${show.emp_password}</td>
+            <td>${show.users_type}</td>
             
            </tr>
            
      </tbody>
+     </c:forEach>
      
-      <%} %>
+      <%-- <%} %> --%>
        </table>
        </div>
        

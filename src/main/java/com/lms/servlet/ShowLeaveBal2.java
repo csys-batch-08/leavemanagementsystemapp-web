@@ -1,6 +1,9 @@
 package com.lms.servlet;
 
 import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -36,7 +39,11 @@ public class ShowLeaveBal2 extends HttpServlet {
 		ShowLevBal sbal2=new ShowLevBal(empid, 0, 0, paid);
 		ShowLevDaoImpl sdao2=new ShowLevDaoImpl();
 		sdao2.updatebal2(sbal2);
-		response.sendRedirect("showLeaveBalanceEmployee.jsp");
+		List<ShowLevBal> showbal=sdao2.checkbalance(sbal2) ;
+		request.setAttribute("showleave", showbal);
+		RequestDispatcher leave=request.getRequestDispatcher("showLeaveBalanceEmployee.jsp");
+		leave.forward(request, response);
+		
 	}
 
 	/**

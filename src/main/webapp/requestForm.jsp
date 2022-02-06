@@ -12,7 +12,9 @@
 
 <style>
 body{
-	background-image:url("image/index") ;
+	background-image:url("image/image.jpg") ;
+	background-repeat:no-repeat;
+	
 	
 }
 
@@ -46,11 +48,11 @@ margin-left:280px;
           
           <ul class="nav navbar-nav">
             <li class="active"><a href="leaverequest">Show Leave Request</a></li>
-            <li><a href="showLeaveBalanceAdmin.jsp">Show Leave Balance</a></li>
-            <li><a href="showAllEmployee.jsp">Show All Employee</a></li>
+            <li><a href="showadmin">Show Leave Balance</a></li>
+            <li><a href="showemployee">Show All Employee</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="Home.jsp"> Sign Up</a></li>
+            <li><a href="index.jsp"> Sign Up</a></li>
             
             </ul>
             </div>

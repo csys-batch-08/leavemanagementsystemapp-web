@@ -1,6 +1,7 @@
-<%@page import="com.lms.model.ShowLevBal"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page isELIgnored="false"%>
+
 <%@page import="java.util.List"%>
-<%@page import="com.lms.daoimpl.ShowLevDaoImpl"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -11,6 +12,13 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <meta charset="ISO-8859-1">
 <title>LMS PROJECT</title>
+<link rel="style"
+	href="//cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript"
+	src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+
 <style>
 .btn{
 height:28px;
@@ -41,14 +49,11 @@ background:#DAD299;
 </form>
 </div>
 <form action="show" method="get">
-<% 
-ShowLevDaoImpl showlevbalancead= new ShowLevDaoImpl();
-List<ShowLevBal> showbal=showlevbalancead.showbal() ;
 
-%>
 <br>
 <div class="container">
- <table class="table table-bordered">
+ <table class="table table-bordered" id="myTable">
+ <thead>
           <tr>
             
             <th>Employee id</th>
@@ -59,32 +64,35 @@ List<ShowLevBal> showbal=showlevbalancead.showbal() ;
             <th>Paid leave</th>
             
           </tr>
- <% 
+          </thead>
 
-int count=0;
-for(ShowLevBal sh:showbal){
-	
- %>
+ 
  <tbody>
+ <c:forEach items="${admin}" var="leave">
           <tr>
             
-            <td><%=sh.getEmp_id()%></td>
-            <td><%=sh.getCausal_lev()%></td>
-            <td><%=sh.getMedical_lev()%></td>
-            <td><%=sh.getCausal_lev_bal()%></td>
-            <td><%=sh.getMedi_lev_bal()%></td>
-            <td><%=sh.getPaid_lev()%></td>
+            <td>${leave.emp_id}</td>
+            <td>${leave.causal_lev}</td>
+            <td>${leave.medical_lev}</td>
+            <td>${leave.causal_lev_bal}</td>
+            <td>${leave.medi_lev_bal}</td>
+            <td>${leave.paid_lev}</td>
             
            </tr>
-           </tbody>
-           <%} %>
+           
+           </c:forEach>
+          </tbody>
      
       </table>
       </div>
       
       
 </form>      
-
-<!-- <a href="CheckLeaveEmployee.jsp"><button type="sumbit">CheckLeaveEmployee</button></a> -->
 </body>
+<script>
+	$(document).ready(function() {
+		$('#myTable').DataTable();
+	});
+	</script>
+
 </html>

@@ -111,6 +111,12 @@ top:99px;
 left:20px
 color:white
 }
+.one1{
+
+top:99px;
+left:100px
+color:white
+}
 </style>
 </head>
 <body>
@@ -127,6 +133,9 @@ color:white
     
     <div class="one">
       <li><a href="insertLeaveRequest.jsp">Leave form</a></li>
+      </div>
+       <div class="one1">
+      <li><a href="employeeprofile">User Profile</a></li>
       </div>
 </ul>
  <div class="container">

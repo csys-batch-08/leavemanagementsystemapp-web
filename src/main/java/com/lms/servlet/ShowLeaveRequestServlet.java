@@ -25,7 +25,7 @@ public class ShowLeaveRequestServlet extends HttpServlet {
     }
 
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		LeaveResDaoImpl levres=new LeaveResDaoImpl();
 		List<LeaveRes> showLevres=levres.showLevres();

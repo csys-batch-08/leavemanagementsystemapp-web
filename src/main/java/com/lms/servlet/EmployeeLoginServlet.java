@@ -1,6 +1,7 @@
 package com.lms.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -34,6 +35,7 @@ public class EmployeeLoginServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		PrintWriter out =response.getWriter();
 		HttpSession session=request.getSession();
 		
 		 String name=request.getParameter("empname");
@@ -43,28 +45,30 @@ public class EmployeeLoginServlet extends HttpServlet {
 		ResultSet rs =empdao.validateLogin(emplog);
 	
 		try {
-			rs.next();
+			if(rs.next()) {
+			
+			int empid=rs.getInt(1);
+			System.out.println(empid);
+			session.setAttribute("empid", empid);
+			
+				response.sendRedirect("applyLeave.jsp");
+			}else {
+				
+
+					out.println("<script type=\"text/javascript\">");
+					out.println("alert('Invalid username  or password');");
+					out.println("location='employeeLogin.jsp';");
+					out.println("</script>");
+
+				
+
+			}
+			
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		try {
-			int empid=rs.getInt(1);
-			System.out.println(empid);
-			session.setAttribute("empid", empid);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}try {
-			if(rs.getString(2).equals(name)&&(rs.getString(5).equals(password))) {
-				response.sendRedirect("applyLeave.jsp");
-			}else {
-				response.getWriter().println("invalid username or password");
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 		
 	}
 

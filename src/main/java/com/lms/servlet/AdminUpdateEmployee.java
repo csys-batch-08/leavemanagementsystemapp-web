@@ -1,6 +1,9 @@
 package com.lms.servlet;
 
 import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -38,7 +41,10 @@ public class AdminUpdateEmployee extends HttpServlet {
 		EmpLogin empupin=new EmpLogin( dept,empupdateid);
 		AdminDaoImpl amupdao=new AdminDaoImpl();
 		amupdao.updateuser(empupin);
-		 response.sendRedirect("showAllEmployee.jsp");
+		List<EmpLogin> log=amupdao.showEmployee();
+		request.setAttribute("employee", log);
+		RequestDispatcher show=request.getRequestDispatcher("showAllEmployee.jsp");
+		show.forward(request, response);
 		
 	}
 

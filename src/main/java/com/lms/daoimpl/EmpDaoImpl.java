@@ -1,6 +1,6 @@
 package com.lms.daoimpl;
 
-import com.lms.*;
+
 import com.lms.dao.EmpDao;
 import com.lms.model.*;
 import com.lms.util.ConnectionUtil;
@@ -15,9 +15,10 @@ import java.util.List;
 
 public class EmpDaoImpl implements EmpDao {
 
-	public EmpLogin resister(EmpLogin log) {
+	public int resister(EmpLogin log) {
 
-		EmpLogin login = new EmpLogin();
+		//EmpLogin login = new EmpLogin();
+		int i=0;
 		String insertQuery = "insert into LMS_EMPLOYEE(emp_name,emp_department,emp_email,emp_password) values(?,?,?,?)";
 
 		Connection con;
@@ -29,7 +30,7 @@ public class EmpDaoImpl implements EmpDao {
 			pstmt.setString(2, log.getEmp_department());
 			pstmt.setString(3, log.getEmp_email());
 			pstmt.setString(4, log.getEmp_password());
-			int i = pstmt.executeUpdate();
+			i = pstmt.executeUpdate();
 			System.out.println(i + "inserted");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -38,7 +39,7 @@ public class EmpDaoImpl implements EmpDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return login;
+		return i;
 	}
 
 	public ResultSet validateLogin(EmpLogin user) {
@@ -79,10 +80,8 @@ public class EmpDaoImpl implements EmpDao {
 		try {
 			con = ConnectionUtil.getConnection();
 			PreparedStatement pstmt = con.prepareStatement(insertQuery);
-
-			pstmt.setInt(1, log.getEmp_id());
-			
-			int i = pstmt.executeUpdate();
+            pstmt.setInt(1, log.getEmp_id());
+		    int i = pstmt.executeUpdate();
 			System.out.println(i + "inserted");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -91,5 +90,57 @@ public class EmpDaoImpl implements EmpDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}}
+	
+	public List<EmpLogin> userview(int userid) {
+		List<EmpLogin> userDetails = new ArrayList<EmpLogin>();
+		Connection con = null;
+		ResultSet rs = null;
+		PreparedStatement pstmt = null;
+		
+		String usershow ="select emp_id, emp_name,emp_department,emp_email from LMS_EMPLOYEE where  emp_id=?";
+		try {
+
+			con = ConnectionUtil.getConnection();
+
+			pstmt = con.prepareStatement(usershow);
+			pstmt.setInt(1, userid);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+
+				EmpLogin user = new EmpLogin (rs.getInt("emp_id"), rs.getString("emp_name"), rs.getString("emp_department"),
+						rs.getString("emp_email"));
+				userDetails.add(user);
+
+			}
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		} finally {
+
+			try {
+				if (rs != null) {
+
+					rs.close();
+				}
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				
+				if (con != null) {
+					con.close();
+				}
+			}
+
+			catch (SQLException e) {
+
+				e.printStackTrace();
+			}
+		}
+
+		return userDetails;
+
+	}
+	
 		
 }

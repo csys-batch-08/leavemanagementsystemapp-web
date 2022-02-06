@@ -82,6 +82,13 @@ public class EmpLogin {
 		this.emp_password = emp_password;
 		this.users_type = users_type;
 	}
+	public EmpLogin(int emp_id, String emp_name, String emp_department, String emp_email) {
+		super();
+		this.emp_id = emp_id;
+		this.emp_name = emp_name;
+		this.emp_department = emp_department;
+		this.emp_email = emp_email;
+	}
 	
 	
 }

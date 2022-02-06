@@ -1,6 +1,8 @@
 <%@page import="java.util.List"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page isELIgnored="false"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
      
@@ -18,7 +20,7 @@ body{
 background: linear-gradient(#DAD299, #b0dab9);}
 .btn
 {
-margin-top:-10px;
+margin-top:-17px;
 margin-left:800px;
 }
 .btn1
@@ -29,9 +31,13 @@ margin-left:1070px;
 .p{
 margin-top:12px;}
 table{
-margin-top: 10px ;
+margin-top: 17px ;
     margin-left: 20px;
     text-align: center;
+}
+.btn2{
+margin-top:-35px;
+margin-left:1300px;
 }
 </style>
 
@@ -56,6 +62,9 @@ List<LeaveRes> showLevres=levres.showLevres();
 <div class="btn1">
 <a href="adminDeleteLeaveRequest.jsp"><button type = "submit"  >Delete Leave Request</button></a>
 </div>
+<div class="btn2">
+<a href="requestForm.jsp"><button type = "submit"  >Back</button></a>
+</div>
 <div class="container">
 <table class="table table-bordered">
 <tr>
@@ -75,23 +84,28 @@ int count=0;
 for(LeaveRes lv:showLevres){
 %> --%>
 
-<c:forEach items="${request}" var="leave"></c:forEach>
+<c:forEach items="${request}" var="leave">
+<fmt:parseDate pattern="yyyy-MM-dd" value="${leave.from_date}"
+				var="parsedFromDate" />
+<fmt:parseDate pattern="yyyy-MM-dd" value="${leave.to_date}"
+				var="parsedTodate" />				
+				
 
  <tbody>
              
           <tr>
-            <td>${leave. request_id}</td>
-            <td>${leave. emp_id}</td>
-            <td>${leave. reason}</td>
-            <td>${leave. from_date}</td>
-            <td>${leave. to_date}</td>
-            <td>${leave. no_ofdays}</td>
-            <td>${leave. status}</td>
+            <td>${leave.request_id}</td>
+            <td>${leave.emp_id}</td>
+            <td>${leave.reason}</td>
+            <td><fmt:formatDate pattern="dd-MM-yyyy" value="${parsedFromDate}" /></td>
+            <td><fmt:formatDate pattern="dd-MM-yyyy" value="${parsedTodate}" /></td>
+            <td>${leave.no_ofdays}</td>
+            <td>${leave.status}</td>
             
            </tr>
            
      </tbody>
-     
+     </c:forEach>
      <%--  <%} %> --%>
        </table>
        </div>

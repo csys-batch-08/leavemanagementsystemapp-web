@@ -1,6 +1,9 @@
 package com.lms.servlet;
 
 import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 
@@ -43,11 +46,14 @@ public class ShowLeaveBal1 extends HttpServlet {
 		if(b>=mel)
 		{
 		
-		
 		ShowLevBal sbal1=new ShowLevBal(mel, empid, 0);
 		ShowLevDaoImpl sdao1=new ShowLevDaoImpl();
 		sdao1.updatebal1(sbal1);
-		response.sendRedirect("showLeaveBalanceEmployee.jsp");
+		List<ShowLevBal> showbal=sdao1.checkbalance(s2) ;
+		request.setAttribute("showleave", showbal);
+		RequestDispatcher leave=request.getRequestDispatcher("showLeaveBalanceEmployee.jsp");
+		leave.forward(request, response);
+
 		}else
 		{
 			System.out.println("not availabl");
