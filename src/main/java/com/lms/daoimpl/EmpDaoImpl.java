@@ -2,14 +2,13 @@ package com.lms.daoimpl;
 
 
 import com.lms.dao.EmpDao;
+import com.lms.logger.Logger;
 import com.lms.model.*;
 import com.lms.util.ConnectionUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,82 +16,93 @@ public class EmpDaoImpl implements EmpDao {
 
 	public int resister(EmpLogin log) {
 
-		//EmpLogin login = new EmpLogin();
-		int i=0;
+		
+		int row=0;
 		String insertQuery = "insert into LMS_EMPLOYEE(emp_name,emp_department,emp_email,emp_password) values(?,?,?,?)";
 
-		Connection con;
+		Connection con=null;
+		PreparedStatement pstmt =null;
 		try {
 			con = ConnectionUtil.getConnection();
-			PreparedStatement pstmt = con.prepareStatement(insertQuery);
+			 pstmt = con.prepareStatement(insertQuery);
 
 			pstmt.setString(1, log.getEmp_name());
 			pstmt.setString(2, log.getEmp_department());
 			pstmt.setString(3, log.getEmp_email());
 			pstmt.setString(4, log.getEmp_password());
-			i = pstmt.executeUpdate();
-			System.out.println(i + "inserted");
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return i;
+			row= pstmt.executeUpdate();
+			
+		}catch (Exception e) {
+
+			Logger.printStackTrace(e);
+			Logger.runTimeException(e.getMessage());
+
+		} finally {
+
+			ConnectionUtil.close(null, pstmt, con);
+		
+	}
+		return row;
 	}
 
-	public ResultSet validateLogin(EmpLogin user) {
-		
+	public EmpLogin validateLogin(EmpLogin user) {
+		EmpLogin login=null;
         ResultSet rs=null;
         String insertQuery2 = "select emp_id, emp_name,emp_department,emp_email,emp_password from LMS_EMPLOYEE where  emp_name=? and emp_password=?";
-		
-		Connection con;
+        PreparedStatement pstmt = null;
+		Connection con=null;
 		try {
 			con = ConnectionUtil.getConnection();
-			PreparedStatement pstmt = con.prepareStatement(insertQuery2);
-			
-			
-            
-			pstmt.setString(1, user.getEmp_name());
+		    pstmt = con.prepareStatement(insertQuery2);
+		    pstmt.setString(1, user.getEmp_name());
 			pstmt.setString(2, user.getEmp_password());
 
 			 rs = pstmt.executeQuery();
+				if(rs.next()) {
+			        login=new EmpLogin(rs.getString("emp_name"),rs.getString("emp_password"));
+			        login.setEmp_id(rs.getInt("emp_id"));
+						}
 			
 
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		} catch (Exception e) {
 
-		return rs;
+			Logger.printStackTrace(e);
+			Logger.runTimeException(e.getMessage());
+
+		} finally {
+
+			ConnectionUtil.close(rs, pstmt, con);
+		
+	}
+
+		return login;
 		
 	}
 	public void addleave(EmpLogin log) {
 
-		//EmpLogin login = new EmpLogin();
+	   int row=0;
 		String insertQuery = "insert into leave_bal(emp_id)values(?)";
-
-		Connection con;
+		PreparedStatement pstmt =null;
+		Connection con=null;
 		try {
 			con = ConnectionUtil.getConnection();
-			PreparedStatement pstmt = con.prepareStatement(insertQuery);
+		    pstmt = con.prepareStatement(insertQuery);
             pstmt.setInt(1, log.getEmp_id());
-		    int i = pstmt.executeUpdate();
-			System.out.println(i + "inserted");
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}}
+		    row = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+
+			Logger.printStackTrace(e);
+			Logger.runTimeException(e.getMessage());
+
+		} finally {
+
+			ConnectionUtil.close(null, pstmt, con);
+		
+	}}
 	
 	public List<EmpLogin> userview(int userid) {
-		List<EmpLogin> userDetails = new ArrayList<EmpLogin>();
+		List<EmpLogin> userDetails = new ArrayList<>();
 		Connection con = null;
 		ResultSet rs = null;
 		PreparedStatement pstmt = null;
@@ -115,28 +125,15 @@ public class EmpDaoImpl implements EmpDao {
 
 		} catch (Exception e) {
 
-			e.printStackTrace();
+			Logger.printStackTrace(e);
+			Logger.runTimeException(e.getMessage());
+
 		} finally {
 
-			try {
-				if (rs != null) {
-
-					rs.close();
-				}
-				if (pstmt != null) {
-					pstmt.close();
-				}
-				
-				if (con != null) {
-					con.close();
-				}
-			}
-
-			catch (SQLException e) {
-
-				e.printStackTrace();
-			}
-		}
+			ConnectionUtil.close(rs, pstmt, con);
+		
+	}
+		
 
 		return userDetails;
 

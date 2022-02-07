@@ -19,24 +19,28 @@ public class AdminLoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
-		int id= Integer.parseInt(request.getParameter("id"));
+		int id=0;
+		try {
+		 id= Integer.parseInt(request.getParameter("id"));
+		}catch(NumberFormatException n) {
+			n.printStackTrace();
+		}
 		String password=request.getParameter("password");
 		Admin ad=new Admin(id, password);
 		AdminDaoImpl adi=new AdminDaoImpl(); 
-		ResultSet rs= adi.validateAdminlogin(ad);
+		Admin adminDetails= adi.validateAdminlogin(ad);
 		try {
-			if(rs.next()) {
-				if(rs.getInt(1) == id && rs.getString(2).equals(password)) {
+			if(adminDetails!=null) {
+				
 					response.sendRedirect("requestForm.jsp");
-				}
+				
 			}else {
 				response.getWriter().println("invalid username or password");
 			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+		} catch (IOException e) {
+
 			e.printStackTrace();
 		}
 		

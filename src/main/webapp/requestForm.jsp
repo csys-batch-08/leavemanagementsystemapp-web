@@ -12,11 +12,8 @@
 
 <style>
 body{
-	background-image:url("image/image.jpg") ;
-	background-repeat:no-repeat;
-	
-	
-}
+	background:#87CEEB ;
+	}
 
 
  .bar{

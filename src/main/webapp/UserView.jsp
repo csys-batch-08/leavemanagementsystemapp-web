@@ -16,7 +16,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <style>
 body{
-background: linear-gradient(#DAD299, #b0dab9);}
+background: #90EE90}
 .but
 {
 margin-top:-70px;
@@ -37,7 +37,7 @@ margin-left:40px;}
 margin-top:500px;
 }
 .button{
-margin-top:-350px;
+margin-top:-250px;
 margin-left:1200px;
 }
 
@@ -54,8 +54,8 @@ margin-left:1200px;
 <form>
 
 <br>
-<div class="table">
- <center><table border="1" cellspacing=0px; cellpadding=20px; style="width: 600px; height:5px;">
+<div class="container">
+<table class="table table-bordered">
           <tr>
             
             <th>Employee Id</th>
@@ -80,8 +80,8 @@ margin-left:1200px;
 </tbody>
 
      </c:forEach>
-      </table></center><br><br><br><br><br><br>
-      </div>
+     </table>
+       </div>
 
      <div class="button">
      <a href="applyLeave.jsp"><button type="button" class="btn btn-primary"> Back </button></a>

@@ -1,6 +1,6 @@
-<%@page import="com.lms.model.ShowLevBal"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page isELIgnored="false"%>
 <%@page import="java.util.List"%>
-<%@page import="com.lms.daoimpl.ShowLevDaoImpl"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -26,14 +26,14 @@ margin-top:150px;}
 <center><h2>Leave Balance Table </h2></center>
 
 <form action="checklev" method="get">
-<% 
+<%-- <% 
 int empId=Integer.parseInt (request.getParameter("emp_id"));
 ShowLevBal sh=new ShowLevBal(empId);
 ShowLevDaoImpl checklevbalance= new ShowLevDaoImpl();
 List<ShowLevBal> checkbal=checklevbalance.checkbalance(sh);
 
 
-%>
+%> --%>
 <br>
 <div class="container">
  <table class="table table-bordered">
@@ -48,31 +48,33 @@ List<ShowLevBal> checkbal=checklevbalance.checkbalance(sh);
             <th>Paid leave</th>
             
           </tr>
- <% 
+<%--  <% 
 
 int count=0;
 for(ShowLevBal ck:checkbal){
 	
- %>
+ %> --%>
+ <c:forEach items="${check}" var="leave">
  <tbody>
           <tr>
             
-            <td><%=ck.getEmp_id()%></td>
-            <td><%=ck.getCausal_lev()%></td>
-            <td><%=ck.getMedical_lev()%></td>
-            <td><%=ck.getCausal_lev_bal()%></td>
-            <td><%=ck.getMedi_lev_bal()%></td>
-            <td><%=ck.getPaid_lev()%></td>
+             <td>${leave.emp_id}</td>
+            <td>${leave.causal_lev}</td>
+            <td>${leave.medical_lev}</td>
+            <td>${leave.causal_lev_bal}</td>
+            <td>${leave.medi_lev_bal}</td>
+            <td>${leave.paid_lev}</td>
             
            </tr>
            </tbody>
-           <%} %>
+          <%--  <%} %> --%>
+          </c:forEach>
      
       </table>
     
       </div>
 </form>
-<!-- <a href="AdminCheckLeave.jsp"><button type="sumbit">Check Leave</button></a>   -->
+
 
 </body>
 </html>

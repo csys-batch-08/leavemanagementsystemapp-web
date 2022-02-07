@@ -16,7 +16,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <style>
 body{
-background: linear-gradient(#DAD299, #b0dab9);}
+background:  #90EE90}
 .but
 {
 margin-top:-70px;
@@ -88,7 +88,7 @@ margin-left:1200px;
 <a href="showLeaveUpdate.jsp"><button type="button" class="btn btn-primary"> Casual Leave </button></a>
 <a href="showLeaveUpdate1.jsp"><button type="button" class="btn btn-primary"> Medical Leave </button></a>
 <a href="showLeaveUpdate2.jsp"><button type="button" class="btn btn-primary"> Paid Leave </button></a>
-<!-- <a href="showLeaveUpdate3.jsp"><button type="button" class="btn btn-primary">Add Id </button></a> -->
+ <a href="showLeaveUpdate3.jsp"><button type="button" class="btn btn-primary">Add Id </button></a> 
      </div>
      <div class="button">
      <a href="applyLeave.jsp"><button type="button" class="btn btn-primary"> Back </button></a>

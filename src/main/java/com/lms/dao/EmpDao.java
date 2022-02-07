@@ -8,6 +8,6 @@ public interface EmpDao {
 
 	public int resister(EmpLogin log);
 
-	public ResultSet validateLogin(EmpLogin user);
+	public EmpLogin validateLogin(EmpLogin user);
 
 }

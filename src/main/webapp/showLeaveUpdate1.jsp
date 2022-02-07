@@ -16,7 +16,7 @@
 
 <style >
 body{
-background :linear-gradient(#649173,#dbd5a4);}
+background :#E6E6FA}
 .container{
 margin-top:90px;
 margin-left:550px;}

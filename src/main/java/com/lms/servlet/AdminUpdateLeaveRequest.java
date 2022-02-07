@@ -14,27 +14,21 @@ import com.lms.daoimpl.LeaveResDaoImpl;
 import com.lms.model.LeaveRes;
 import com.lms.model.LevStatus;
 
-/**
- * Servlet implementation class AdminUpdateLeaveRequest
- */
+
 @WebServlet("/adulev")
 public class AdminUpdateLeaveRequest extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+   
     public AdminUpdateLeaveRequest() {
         super();
-        // TODO Auto-generated constructor stub
+        
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
 		String status=request.getParameter("status");
 		int resid=Integer.parseInt(request.getParameter("resid"));
 		 LevStatus st=new  LevStatus(status, resid);
@@ -48,12 +42,7 @@ public class AdminUpdateLeaveRequest extends HttpServlet {
 		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+	
 	}
 
-}
+

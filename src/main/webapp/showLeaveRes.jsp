@@ -46,13 +46,6 @@ margin-left:1300px;
 <center><h1>LEAVE MANAGEMENT SYSTEM</h1></center>
 <p><h3> Show Leave Request Form</h3></p>
 
-<%-- <%
-LeaveResDaoImpl levres=new LeaveResDaoImpl();
-%>
-<% 
-List<LeaveRes> showLevres=levres.showLevres();
-  
-%> --%>
 <br>
  <div class="btn">
  <form action="adminUpdateLeaveRequest.jsp">
@@ -78,11 +71,7 @@ List<LeaveRes> showLevres=levres.showLevres();
 
 </tr>
 
-<%-- <% 
 
-int count=0;
-for(LeaveRes lv:showLevres){
-%> --%>
 
 <c:forEach items="${request}" var="leave">
 <fmt:parseDate pattern="yyyy-MM-dd" value="${leave.from_date}"
@@ -106,7 +95,7 @@ for(LeaveRes lv:showLevres){
            
      </tbody>
      </c:forEach>
-     <%--  <%} %> --%>
+     
        </table>
        </div>
       

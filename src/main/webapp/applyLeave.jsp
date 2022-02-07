@@ -5,6 +5,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 
 <style>
@@ -12,6 +15,13 @@ body {
 	
 	background: linear-gradient(#DAD299, #b0dab9);
 	
+}
+.bar{
+            margin-top: 40px;
+        }
+        ul{
+float:left;
+display:inline;
 }
         @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,300&display=swap');
       #p1{
@@ -52,7 +62,7 @@ body {
         }
         div.a{
             text-align:  justify;
-            margin-top: 190px;
+            margin-top: 80px;
             font-size: 21px;
             margin-left: 590px;
 } 
@@ -60,14 +70,14 @@ body {
 
 div.b{
             text-align: justify;
-            margin-top: 70px;
+            margin-top: 65px;
             font-size: 21px;
           position: relative;left: 13px;
           margin-left: 590px;
 } 
 div.c{
             text-align:  justify;
-            margin-top: 80px;
+            margin-top: 30px;
             font-size: 21px;
           position: relative;left: 13px;
           margin-left: 590px;
@@ -76,7 +86,7 @@ h1{
 text-align:center;
 }
 ul{
-float:left;
+float:right;
 display:inline;
 }
 ul {
@@ -105,17 +115,10 @@ li a {
 li a:hover {
   background-color: #111;
 }
-.one{
-position:absolute;
-top:99px;
-left:20px
-color:white
-}
-.one1{
 
-top:99px;
-left:100px
-color:white
+.sin{
+margin-top:10px;
+margin-left:80px;
 }
 </style>
 </head>
@@ -123,21 +126,25 @@ color:white
 <h1>LEAVE MANAGEMENT SYSTEM </h1>
 
 
-<ul>
-  
-  
-<li><a href="index.jsp">Logout</a></li>
-  
-  <li><a href="employee">Balance leave</a></li>
-    <li><a href="updateLeaveRequest.jsp">Update leave</a></li>
-    
-    <div class="one">
-      <li><a href="insertLeaveRequest.jsp">Leave form</a></li>
-      </div>
-       <div class="one1">
-      <li><a href="employeeprofile">User Profile</a></li>
-      </div>
-</ul>
+
+<div class="bar">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          
+          <ul class="nav navbar-nav">
+           <li><a href="employeeprofile">User Profile</a></li>
+           <li class="active"><a href="employee">Balance leave</a></li>
+           <li><a href="insertLeaveRequest.jsp">Leave form</a></li>
+            
+            <li><a href="updateLeaveRequest.jsp">Update leave</a></li>
+            
+        <div class="sin">
+           <li><a href="index.jsp"> Sign Up</a></li>
+            </div>
+            </ul>
+            </div>
+            </nav>
+             </div>
  <div class="container">
 
   

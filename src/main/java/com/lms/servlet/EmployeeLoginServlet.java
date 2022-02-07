@@ -15,40 +15,36 @@ import javax.servlet.http.HttpSession;
 import com.lms.daoimpl.EmpDaoImpl;
 import com.lms.model.EmpLogin;
 
-/**
- * Servlet implementation class EmployeeLoginServlet
- */
+
 @WebServlet("/EmployeeLogin")
 public class EmployeeLoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+   
     public EmployeeLoginServlet() {
         super();
-        // TODO Auto-generated constructor stub
+
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		PrintWriter out =response.getWriter();
+
+		
 		HttpSession session=request.getSession();
 		
 		 String name=request.getParameter("empname");
 		String password=request.getParameter("password");
 		EmpLogin emplog=new EmpLogin(name,password);
 		EmpDaoImpl empdao=new EmpDaoImpl();
-		ResultSet rs =empdao.validateLogin(emplog);
+		EmpLogin log =empdao.validateLogin(emplog);
 	
 		try {
-			if(rs.next()) {
+			PrintWriter out =response.getWriter();
+			if(log!=null) {
 			
-			int empid=rs.getInt(1);
-			System.out.println(empid);
+			int empid=log.getEmp_id();
+			System.out.println(empid+" employee");
 			session.setAttribute("empid", empid);
 			
 				response.sendRedirect("applyLeave.jsp");
@@ -64,8 +60,8 @@ public class EmployeeLoginServlet extends HttpServlet {
 
 			}
 			
-		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
+		} catch (IOException e1) {
+		
 			e1.printStackTrace();
 		}
 		

@@ -14,14 +14,12 @@ import javax.servlet.http.HttpServletResponse;
 import com.lms.daoimpl.LeaveResDaoImpl;
 import com.lms.model.LeaveRes;
 
-/**
- * Servlet implementation class UpdateLeaveRequest
- */
+
 @WebServlet("/update")
 public class UpdateLeaveRequest extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 	
        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
 		
@@ -55,9 +53,7 @@ public class UpdateLeaveRequest extends HttpServlet {
 		response.sendRedirect("applyLeave.jsp");
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 
 
 }

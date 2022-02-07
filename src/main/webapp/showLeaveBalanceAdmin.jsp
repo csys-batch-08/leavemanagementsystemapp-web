@@ -42,12 +42,7 @@ background:#DAD299;
 <body>
 
 <center><h1> LEAVE MANAGEMENT SYSTEM </h1></center>
-<div class="search">
-<form action="checkLeaveEmployee.jsp">
-<div class="p"><input type="text" name="emp_id" pattern="[0-9]{4,8}" requried style="width:100px;" placeholder="search......" ></div>
-<div class="btn"><button type="submit" class="btn btn-success" >search</button></div>
-</form>
-</div>
+
 <form action="show" method="get">
 
 <br>

@@ -8,7 +8,7 @@ import com.lms.model.EmpLogin;
 public interface AdminDao {
 	public Admin insert(Admin o1);
 
-	public ResultSet validateAdminlogin(Admin user);
+	public Admin validateAdminlogin(Admin user);
 
 	public EmpLogin insertUser(EmpLogin e1);
 

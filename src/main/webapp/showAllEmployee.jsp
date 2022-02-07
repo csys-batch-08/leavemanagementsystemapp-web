@@ -44,20 +44,14 @@ margin-top: -37px ;
 <body>
 <h3>Show All Employee</h3>
 <form action="employee" method="get">
-<%-- <%
-AdminDaoImpl employ=new AdminDaoImpl ();
-%>
-<% 
-List<EmpLogin> log=employ.showEmployee();
-  
-%> --%>
+
 <br>
 
    <div class="btn1">
-    <a href="adminUpdateEmployee.jsp"><button type="button" class="btn btn-primary">Update Employee</button></a>
+    <a href="adminUpdateEmployee.jsp"><button type="button" class="btn btn-secondary">Update Employee</button></a>
 </div>
 <div class="btn2">
-<a href="requestForm.jsp"><button type="button" class="btn btn-light">Back</button></a>
+<a href="requestForm.jsp"><button type="button" class="btn btn-secondary">Back</button></a>
 </div>
    
 <div class="container">
@@ -74,11 +68,7 @@ List<EmpLogin> log=employ.showEmployee();
 
 </tr>
 
-<%-- <% 
 
-int count=0;
-for(EmpLogin em:log){
-%> --%>
 
 <c:forEach items="${employee}" var="show">
 
@@ -97,7 +87,7 @@ for(EmpLogin em:log){
      </tbody>
      </c:forEach>
      
-      <%-- <%} %> --%>
+ 
        </table>
        </div>
        
