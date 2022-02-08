@@ -17,22 +17,20 @@ import com.lms.model.LeaveRes;
 @WebServlet("/insert")
 public class InsertLeaveRequest extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-   
-    public InsertLeaveRequest() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
-		
-	
-		int empid=Integer.parseInt(request.getParameter("id"));
-		String reason=request.getParameter("reason");
-		String datestr=request.getParameter("fromdate");
+	public InsertLeaveRequest() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+		int empid = Integer.parseInt(request.getParameter("id"));
+		String reason = request.getParameter("reason");
+		String datestr = request.getParameter("fromdate");
 		Date dt = null;
 		try {
 			dt = sdf.parse(datestr);
@@ -40,8 +38,8 @@ public class InsertLeaveRequest extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		String datestr1=request.getParameter("todate");
+
+		String datestr1 = request.getParameter("todate");
 		Date dt1 = null;
 		try {
 			dt1 = sdf.parse(datestr1);
@@ -49,19 +47,18 @@ public class InsertLeaveRequest extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	
-		int no=Integer.parseInt(request.getParameter("days"));
-		LeaveRes lev=new LeaveRes(empid, reason, dt, dt1, no);
-		LeaveResDaoImpl levda=new LeaveResDaoImpl ();
+
+		int no = Integer.parseInt(request.getParameter("days"));
+		LeaveRes lev = new LeaveRes(empid, reason, dt, dt1, no);
+		LeaveResDaoImpl levda = new LeaveResDaoImpl();
 		levda.applyLeave(lev);
-		
+
 		response.sendRedirect("applyLeave.jsp");
-		
-		
+
 	}
 
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

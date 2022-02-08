@@ -13,38 +13,33 @@ import javax.servlet.http.HttpServletResponse;
 import com.lms.daoimpl.AdminDaoImpl;
 import com.lms.model.EmpLogin;
 
-
 @WebServlet("/updateemp")
 public class AdminUpdateEmployee extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-   
-    public AdminUpdateEmployee() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
+	public AdminUpdateEmployee() {
+		super();
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	}
+
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		
-		System.out.println("updated");
-		String dept=request.getParameter("depart");
-		int empupdateid=Integer.parseInt(request.getParameter("empupid"));
-	
-		EmpLogin empupin=new EmpLogin( dept,empupdateid);
-		AdminDaoImpl amupdao=new AdminDaoImpl();
-		amupdao.updateuser(empupin);
-		List<EmpLogin> log=amupdao.showEmployee();
+		String dept = request.getParameter("depart");
+		int empupdateid = Integer.parseInt(request.getParameter("empupid"));
+
+		EmpLogin empupin = new EmpLogin(dept, empupdateid);
+		AdminDaoImpl amupdao = new AdminDaoImpl();
+		amupdao.updateUser(empupin);
+		List<EmpLogin> log = amupdao.showEmployee();
 		request.setAttribute("employee", log);
-		RequestDispatcher show=request.getRequestDispatcher("showAllEmployee.jsp");
+		RequestDispatcher show = request.getRequestDispatcher("showAllEmployee.jsp");
 		show.forward(request, response);
-		
+
 	}
 
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
 
 }

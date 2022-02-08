@@ -17,22 +17,20 @@ import com.lms.model.ShowLevBal;
 @WebServlet("/employee")
 public class ShowLeaveBalanceEmployeeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-   
 
-	
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session=request.getSession();
-		int empid=(int)session.getAttribute("empid");
-		
-		ShowLevBal show=new ShowLevBal(empid);
-		ShowLevDaoImpl showlevbalance= new ShowLevDaoImpl();
-		List<ShowLevBal> showbal=showlevbalance.checkbalance(show) ;
+	@Override
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		int empid = (int) session.getAttribute("empid");
+
+		ShowLevBal show = new ShowLevBal(empid);
+		ShowLevDaoImpl showlevbalance = new ShowLevDaoImpl();
+		List<ShowLevBal> showbal = showlevbalance.checkBalance(show);
 		request.setAttribute("showleave", showbal);
-		RequestDispatcher leave=request.getRequestDispatcher("showLeaveBalanceEmployee.jsp");
+		RequestDispatcher leave = request.getRequestDispatcher("showLeaveBalanceEmployee.jsp");
 		leave.forward(request, response);
-		
-		
+
 	}
 
 }

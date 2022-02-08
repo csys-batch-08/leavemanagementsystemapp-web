@@ -129,7 +129,8 @@ form .user-details .input-box {
 
 				<div class="input-box">
 					<span class="details">Enter the no of days:</span> <input
-						type="number" name="nofdays" id ="no" placeholder="No of days"required>
+						type="number" name="nofdays" id="no" placeholder="No of days"
+						required>
 				</div>
 				<div class="button">
 					<input type="submit" value="submit">
@@ -142,67 +143,61 @@ form .user-details .input-box {
 
 	</form>
 
-<script type="text/javascript">
-var today = new Date();
-var dd = today.getDate();
-var mm = today.getMonth()+1; 
-var yyyy = today.getFullYear();
-if(dd<10){
-  dd='0'+dd
-} 
-if(mm<10){
-  mm='0'+mm
-} 
-today = yyyy+'-'+mm+'-'+dd;
-document.getElementById("datefield").setAttribute("min", today);
-</script>
+	<script type="text/javascript">
+		var today = new Date();
+		var dd = today.getDate();
+		var mm = today.getMonth() + 1;
+		var yyyy = today.getFullYear();
+		if (dd < 10) {
+			dd = '0' + dd
+		}
+		if (mm < 10) {
+			mm = '0' + mm
+		}
+		today = yyyy + '-' + mm + '-' + dd;
+		document.getElementById("datefield").setAttribute("min", today);
+	</script>
 
 
 
-<script>
-today();
-function today(){
-    var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    var yyyy = today.getFullYear();
-    var yyyy1= today.getFullYear()+1;
-maxdate =yyyy1 + '-' + mm + '-'+ dd  ;
+	<script>
+		today();
+		function today() {
+			var today = new Date();
+			var dd = String(today.getDate()).padStart(2, '0');
+			var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+			var yyyy = today.getFullYear();
+			var yyyy1 = today.getFullYear() + 1;
+			maxdate = yyyy1 + '-' + mm + '-' + dd;
 
-document.getElementById("uptodate").setAttribute("max",maxdate);
+			document.getElementById("uptodate").setAttribute("max", maxdate);
 
-}
-</script>
+		}
+	</script>
 
-<script type = "text/javascript" >
-    // JavaScript program to illustrate 
-    // calculation of no. of days between two date 
-  
-    // To set two dates to two variables
-  
-    function calc(){
-    var fromdate=document.getElementById("datefield").value;
-    var todate=document.getElementById("uptodate").value;
-    var days=document.getElementById("no");
-    console.log(fromdate);
-    var date1 = new Date(fromdate);
-var date2 = new Date(todate);
-  
-const _MS_PER_DAY = 1000 * 60 * 60 * 24;
+	<script type="text/javascript">
+		// JavaScript program to illustrate 
+		// calculation of no. of days between two date 
 
-// Discard the time and time-zone information.
-const utc1 = Date.UTC(date1.getFullYear(), date1.getMonth(), date1.getDate());
-const utc2 = Date.UTC(date2.getFullYear(), date2.getMonth(), date2.getDate());
+		// To set two dates to two variables
 
-days.value=Math.floor((utc2 - utc1) / _MS_PER_DAY);
-    }  
-</script>
+		function calc() {
+			var fromdate = document.getElementById("datefield").value;
+			var todate = document.getElementById("uptodate").value;
+			var days = document.getElementById("no");
+			console.log(fromdate);
+			var date1 = new Date(fromdate);
+			var date2 = new Date(todate);
 
+			const _MS_PER_DAY = 1000 * 60 * 60 * 24;
 
+			// Discard the time and time-zone information.
+			const utc1 = Date.UTC(date1.getFullYear(), date1.getMonth(), date1
+					.getDate());
+			const utc2 = Date.UTC(date2.getFullYear(), date2.getMonth(), date2
+					.getDate());
 
-
-
-
-
-
+			days.value = Math.floor((utc2 - utc1) / _MS_PER_DAY);
+		}
+	</script>
 </html>

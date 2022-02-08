@@ -6,7 +6,6 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <style>
-
 body {
 	height: 100vh;
 	display: flex;
@@ -115,16 +114,16 @@ ul {
 		<div class="button1">
 			<input type="submit" value="Register login">
 		</div>
-		</form>
-		<form action="adminLogin.jsp">
-			<div class="button2">
-				<input type="submit" value="Admin login">
-			</div>
-			</form>
-			<form action="employeeLogin.jsp">
-				<div class="button3">
-					<input type="submit" value="Employee login">
-				</div>
-				</form>
+	</form>
+	<form action="adminLogin.jsp">
+		<div class="button2">
+			<input type="submit" value="Admin login">
+		</div>
+	</form>
+	<form action="employeeLogin.jsp">
+		<div class="button3">
+			<input type="submit" value="Employee login">
+		</div>
+	</form>
 </body>
 </html>

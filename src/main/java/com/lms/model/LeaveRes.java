@@ -3,101 +3,119 @@ package com.lms.model;
 import java.util.Date;
 
 public class LeaveRes {
-	
-	private int request_id;
-	private int emp_id;
+
+	private int requestId;
+	private int empId;
 	private String reason;
-	private Date from_date;
-	private Date to_date;
-	private int no_ofdays;
+	private Date fromDate;
+	private Date toDate;
+	private int noOfdays;
 	private String status;
-	public int getRequest_id() {
-		return request_id;
-	}
-	public void setRequest_id(int request_id) {
-		this.request_id = request_id;
-	}
+
 	
-	
-	public int getEmp_id() {
-		return emp_id;
+
+	public int getRequestId() {
+		return requestId;
 	}
-	public void setEmp_id(int emp_id) {
-		this.emp_id = emp_id;
+
+	public void setRequestId(int requestId) {
+		this.requestId = requestId;
 	}
+
+	public int getEmpId() {
+		return empId;
+	}
+
+	public void setEmpId(int empId) {
+		this.empId = empId;
+	}
+
 	public String getReason() {
 		return reason;
 	}
+
 	public void setReason(String reason) {
 		this.reason = reason;
 	}
-	public Date getFrom_date() {
-		return from_date;
+
+	public Date getFromDate() {
+		return fromDate;
 	}
-	public void setFrom_date(Date from_date) {
-		this.from_date = from_date;
+
+	public void setFromDate(Date fromDate) {
+		this.fromDate = fromDate;
 	}
-	public Date getTo_date() {
-		return to_date;
+
+	public Date getToDate() {
+		return toDate;
 	}
-	public void setTo_date(Date to_date) {
-		this.to_date = to_date;
+
+	public void setToDate(Date toDate) {
+		this.toDate = toDate;
 	}
-	public int getNo_ofdays() {
-		return no_ofdays;
+
+	public int getNoOfdays() {
+		return noOfdays;
 	}
-	public void setNo_ofdays(int no_ofdays) {
-		this.no_ofdays = no_ofdays;
+
+	public void setNoOfdays(int noOfdays) {
+		this.noOfdays = noOfdays;
 	}
+
 	public String getStatus() {
 		return status;
 	}
+
 	public void setStatus(String status) {
 		this.status = status;
 	}
+
 	public LeaveRes() {
 		super();
-		// TODO Auto-generated constructor stub
+
 	}
-	public LeaveRes(int request_id, int emp_id, String reason, Date from_date, Date to_date, int no_ofdays,
-			String status) {
+
+	
+
+	public LeaveRes(int requestId, int empId, String reason, Date fromDate, Date toDate, int noOfdays, String status) {
 		super();
-		this.request_id = request_id;
-		this.emp_id = emp_id;
+		this.requestId = requestId;
+		this.empId = empId;
 		this.reason = reason;
-		this.from_date = from_date;
-		this.to_date = to_date;
-		this.no_ofdays = no_ofdays;
+		this.fromDate = fromDate;
+		this.toDate = toDate;
+		this.noOfdays = noOfdays;
 		this.status = status;
 	}
-	public LeaveRes(int emp_id, Date from_date, Date to_date,int no_ofdays) {
+
+
+
+	public LeaveRes(int empId, Date fromDate, Date toDate, int noOfdays) {
 		super();
-		this.emp_id = emp_id;
-		this.from_date = from_date;
-		this.to_date = to_date;
-		this.no_ofdays = no_ofdays;
+		this.empId = empId;
+		this.fromDate = fromDate;
+		this.toDate = toDate;
+		this.noOfdays = noOfdays;
 	}
-	public LeaveRes(int request_id) {
+
+	public LeaveRes(int requestId) {
 		super();
-		this.request_id = request_id;
+		this.requestId = requestId;
 	}
-	public LeaveRes(int emp_id, String reason, Date from_date, Date to_date, int no_ofdays) {
+
+	public LeaveRes(int empId, String reason, Date fromDate, Date toDate, int noOfdays) {
 		super();
-		this.emp_id = emp_id;
+		this.empId = empId;
 		this.reason = reason;
-		this.from_date = from_date;
-		this.to_date = to_date;
-		this.no_ofdays = no_ofdays;
+		this.fromDate = fromDate;
+		this.toDate = toDate;
+		this.noOfdays = noOfdays;
 	}
-	public LeaveRes(int request_id, String status) {
+
+	public LeaveRes(int requestId, String status) {
 		super();
-		this.request_id = request_id;
+		this.requestId = requestId;
 		this.status = status;
 	}
-	
-	
-	
-	
-	
 
 }

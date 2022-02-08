@@ -1,70 +1,78 @@
 package com.lms.model;
 
 public class LevStatus {
-	
-	
-	private int manager_id;
-	private int request_id;
-	private int emp_id;
+
+	private int managerId;
+	private int requestId;
+	private int empId;
 	private String status;
-	public int getManager_id() {
-		return manager_id;
+
+	public int getManagerId() {
+		return managerId;
 	}
-	
-	
-	public void setManager_id(int manager_id) {
-		this.manager_id = manager_id;
+
+	public void setManagerId(int managerId) {
+		this.managerId = managerId;
 	}
-	public int getRequest_id() {
-		return request_id;
+
+	public int getRequestId() {
+		return requestId;
 	}
-	public void setRequest_id(int request_id) {
-		this.request_id = request_id;
+
+	public void setRequestId(int requestId) {
+		this.requestId = requestId;
 	}
-	public int getEmp_id() {
-		return emp_id;
+
+	public int getEmpId() {
+		return empId;
 	}
-	public void setEmp_id(int emp_id) {
-		this.emp_id = emp_id;
+
+	public void setEmpId(int empId) {
+		this.empId = empId;
 	}
+
 	public String getStatus() {
 		return status;
 	}
+
 	public void setStatus(String status) {
 		this.status = status;
 	}
+
 	public LevStatus() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
-	public LevStatus(int manager_id, int request_id, int emp_id, String status) {
+
+	public LevStatus(int managerId, int requestId, int empId, String status) {
 		super();
-		this.manager_id = manager_id;
-		this.request_id = request_id;
-		this.emp_id = emp_id;
+		this.managerId = managerId;
+		this.requestId = requestId;
+		this.empId = empId;
 		this.status = status;
 	}
-	public LevStatus(int manager_id, int emp_id) {
+
+	public LevStatus(int managerId, int empId) {
 		super();
-		this.manager_id = manager_id;
-		this.emp_id = emp_id;
+		this.managerId = managerId;
+		this.empId = empId;
 	}
-	public LevStatus(String status,int request_id ) {
+
+	public LevStatus(String status, int requestId) {
 		super();
-		this.request_id = request_id;
+		this.requestId = requestId;
 		this.status = status;
 	}
-	public LevStatus(int request_id) {
+
+	public LevStatus(int requestId) {
 		super();
-		this.request_id = request_id;
+		this.requestId = requestId;
 	}
-	
+
 	public LevStatus(int manager_id, int request_id, int emp_id) {
 		super();
-		this.manager_id = manager_id;
-		this.request_id = request_id;
-		this.emp_id = emp_id;
+		this.managerId = manager_id;
+		this.requestId = request_id;
+		this.empId = emp_id;
 	}
-	
 
 }

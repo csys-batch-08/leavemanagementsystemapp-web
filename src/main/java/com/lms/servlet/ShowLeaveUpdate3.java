@@ -10,31 +10,23 @@ import javax.servlet.http.HttpServletResponse;
 import com.lms.daoimpl.EmpDaoImpl;
 import com.lms.model.EmpLogin;
 
-
 @WebServlet("/addlev")
 public class ShowLeaveUpdate3 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    
-    public ShowLeaveUpdate3() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-		int empid=Integer.parseInt(request.getParameter("id"));
-		EmpLogin el=new EmpLogin(empid);
-		EmpDaoImpl edi=new EmpDaoImpl();
-		edi.addleave(el);
-		response.sendRedirect("employee");
+	public ShowLeaveUpdate3() {
+		super();
 	}
 
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		int empid = Integer.parseInt(request.getParameter("id"));
+		EmpLogin el = new EmpLogin(empid);
+		EmpDaoImpl edi = new EmpDaoImpl();
+		edi.addLeave(el);
+		response.sendRedirect("employee");
 	}
 
 }

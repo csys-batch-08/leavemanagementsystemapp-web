@@ -1,7 +1,5 @@
 package com.lms.dao;
 
-import java.sql.ResultSet;
-
 import com.lms.model.Admin;
 import com.lms.model.EmpLogin;
 
@@ -12,8 +10,8 @@ public interface AdminDao {
 
 	public EmpLogin insertUser(EmpLogin e1);
 
-	public EmpLogin updateuser(EmpLogin e2);
+	public EmpLogin updateUser(EmpLogin e2);
 
-	public EmpLogin deleteuser(EmpLogin e3);
+	public EmpLogin deleteUser(EmpLogin e3);
 
 }

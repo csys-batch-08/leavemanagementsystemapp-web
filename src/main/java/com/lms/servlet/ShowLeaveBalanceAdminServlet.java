@@ -16,13 +16,14 @@ import com.lms.model.ShowLevBal;
 @WebServlet("/showadmin")
 public class ShowLeaveBalanceAdminServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ShowLevDaoImpl showlevbalancead= new ShowLevDaoImpl();
-		List<ShowLevBal> showbal=showlevbalancead.showbal() ;
+	@Override
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		ShowLevDaoImpl showlevbalancead = new ShowLevDaoImpl();
+		List<ShowLevBal> showbal = showlevbalancead.showbal();
 		request.setAttribute("admin", showbal);
-		RequestDispatcher balance =request.getRequestDispatcher("showLeaveBalanceAdmin.jsp");
+		RequestDispatcher balance = request.getRequestDispatcher("showLeaveBalanceAdmin.jsp");
 		balance.forward(request, response);
 	}
 

@@ -1,98 +1,110 @@
 package com.lms.model;
 
 public class EmpLogin {
+
+	private int empId;
+	private String empName;
+	private String empDepartment;
+	private String empEmail;
+	private String empPassword;
+	private String usersType;
+
 	
-	private int emp_id;
-	private String emp_name;
-	private String emp_department;
-	private String emp_email;
-	private String emp_password;
-	private String users_type;
-	
-	
-	
-	public String getUsers_type() {
-		return users_type;
+	public int getEmpId() {
+		return empId;
 	}
-	public void setUsers_type(String users_type) {
-		this.users_type = users_type;
+
+	public void setEmpId(int empId) {
+		this.empId = empId;
 	}
-	public int getEmp_id() {
-		return emp_id;
+
+	public String getEmpName() {
+		return empName;
 	}
-	public void setEmp_id(int emp_id) {
-		this.emp_id = emp_id;
+
+	public void setEmpName(String empName) {
+		this.empName = empName;
 	}
-	public String getEmp_name() {
-		return emp_name;
+
+	public String getEmpDepartment() {
+		return empDepartment;
 	}
-	public void setEmp_name(String emp_name) {
-		this.emp_name = emp_name;
+
+	public void setEmpDepartment(String empDepartment) {
+		this.empDepartment = empDepartment;
 	}
-	public String getEmp_department() {
-		return emp_department;
+
+	public String getEmpEmail() {
+		return empEmail;
 	}
-	public void setEmp_department(String emp_department) {
-		this.emp_department = emp_department;
+
+	public void setEmpEmail(String empEmail) {
+		this.empEmail = empEmail;
 	}
-	public String getEmp_email() {
-		return emp_email;
+
+	public String getEmpPassword() {
+		return empPassword;
 	}
-	public void setEmp_email(String emp_email) {
-		this.emp_email = emp_email;
+
+	public void setEmpPassword(String empPassword) {
+		this.empPassword = empPassword;
 	}
-	public String getEmp_password() {
-		return emp_password;
+
+	public String getUsersType() {
+		return usersType;
 	}
-	public void setEmp_password(String emp_password) {
-		this.emp_password = emp_password;
+
+	public void setUsersType(String usersType) {
+		this.usersType = usersType;
 	}
+
 	public EmpLogin() {
 		super();
-	
+
 	}
-	public EmpLogin(String emp_name, String emp_department, String emp_email, String emp_password) {
+
+	public EmpLogin(String empName, String empDepartment, String empEmail, String empPassword) {
 		super();
-		this.emp_name = emp_name;
-		this.emp_department = emp_department;
-		this.emp_email = emp_email;
-		this.emp_password = emp_password;
+		this.empName = empName;
+		this.empDepartment = empDepartment;
+		this.empEmail = empEmail;
+		this.empPassword = empPassword;
 	}
-	public EmpLogin(String emp_name, String emp_password) {
+
+	public EmpLogin(String empName, String empPassword) {
 		super();
-		this.emp_name = emp_name;
-		this.emp_password = emp_password;
+		this.empName = empName;
+		this.empPassword = empPassword;
 	}
-	public EmpLogin(String emp_department,int emp_id ) {
+
+	public EmpLogin(String empDepartment, int empId) {
 		super();
-		this.emp_id = emp_id;
-		this.emp_department = emp_department;
+		this.empId = empId;
+		this.empDepartment = empDepartment;
 	}
-	public EmpLogin(int emp_id) {
+
+	public EmpLogin(int empId) {
 		super();
-		this.emp_id = emp_id;
+		this.empId = empId;
 	}
-	public EmpLogin(int emp_id, String emp_name, String emp_department, String emp_email, String emp_password,
-			String users_type) {
+
+	public EmpLogin(int empId, String empName, String empDepartment, String empEmail, String empPassword,
+			String usersType) {
 		super();
-		this.emp_id = emp_id;
-		this.emp_name = emp_name;
-		this.emp_department = emp_department;
-		this.emp_email = emp_email;
-		this.emp_password = emp_password;
-		this.users_type = users_type;
+		this.empId = empId;
+		this.empName = empName;
+		this.empDepartment = empDepartment;
+		this.empEmail = empEmail;
+		this.empPassword =empPassword;
+		this.usersType = usersType;
 	}
-	public EmpLogin(int emp_id, String emp_name, String emp_department, String emp_email) {
+
+	public EmpLogin(int empId, String empName, String empDepartment, String empEmail) {
 		super();
-		this.emp_id = emp_id;
-		this.emp_name = emp_name;
-		this.emp_department = emp_department;
-		this.emp_email = emp_email;
+		this.empId = empId;
+		this.empName = empName;
+		this.empDepartment =empDepartment;
+		this.empEmail = empEmail;
 	}
-	
-	
+
 }
-	
-	
-
-

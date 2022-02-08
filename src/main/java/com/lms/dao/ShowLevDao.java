@@ -1,16 +1,19 @@
 package com.lms.dao;
 
-import java.sql.ResultSet;
 import java.util.List;
 
 import com.lms.model.ShowLevBal;
 
 public interface ShowLevDao {
-	
-	public ShowLevBal insertleave(ShowLevBal sb);
-	public ShowLevBal updatebal(ShowLevBal shw);
-	public ShowLevBal updatebal1(ShowLevBal shw1);
-	public ShowLevBal updatebal2(ShowLevBal shw2);
-	public List<ShowLevBal>showbal();
+
+	public ShowLevBal insertLeave(ShowLevBal sb);
+
+	public ShowLevBal casualBalance(ShowLevBal shw);
+
+	public ShowLevBal medicalBalance(ShowLevBal shw1);
+
+	public ShowLevBal paidLeave(ShowLevBal shw2);
+
+	public List<ShowLevBal> showbal();
 
 }

@@ -16,16 +16,16 @@ import com.lms.model.EmpLogin;
 @WebServlet("/showemployee")
 public class showAllEmployeeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
- 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-		AdminDaoImpl employ=new AdminDaoImpl ();
-		List<EmpLogin> log=employ.showEmployee();
+
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		AdminDaoImpl employ = new AdminDaoImpl();
+		List<EmpLogin> log = employ.showEmployee();
 		request.setAttribute("employee", log);
-		RequestDispatcher show=request.getRequestDispatcher("showAllEmployee.jsp");
+		RequestDispatcher show = request.getRequestDispatcher("showAllEmployee.jsp");
 		show.forward(request, response);
-		
+
 	}
 
 }

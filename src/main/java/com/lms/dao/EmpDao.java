@@ -1,7 +1,5 @@
 package com.lms.dao;
 
-import java.sql.ResultSet;
-
 import com.lms.model.EmpLogin;
 
 public interface EmpDao {
